@@ -1,0 +1,82 @@
+<mxfile host="app.diagrams.net" modified="2025-07-25T17:29:00.000Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="8oU6sE-Q9QW1M2V_s9aJ" version="24.7.4" type="device">
+  <diagram name="LMS-UML" id="cEa8u4w9R_1i0o_i6-m7">
+    <mxGraphModel dx="2034" dy="1343" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="controller-student" value="&lt;b&gt;StudentController&lt;/b&gt;&lt;hr/&gt;- studentService: StudentService&lt;hr/&gt;+ getAllStudents()&lt;br&gt;+ addStudent(student)&lt;br&gt;+ updateStudent(id, student)&lt;br&gt;+ deleteStudent(id)&lt;br&gt;+ getSingleStudent(id)&lt;br&gt;+ getStudentsByMajor(major)&lt;br&gt;+ getStudentsByAgeRange(min, max)&lt;br&gt;+ getAverageGpa()&lt;br&gt;+ getHighestGpaStudent()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="280" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="controller-course" value="&lt;b&gt;CourseController&lt;/b&gt;&lt;hr/&gt;- courseService: CourseService&lt;hr/&gt;+ getAllCourses()&lt;br&gt;+ addCourse(course)&lt;br&gt;+ updateCourse(id, course)&lt;br&gt;+ deleteCourse(id)&lt;br&gt;+ getCourseById(id)&lt;br&gt;+ assignTeacherToCourse(courseId, teacherId)&lt;br&gt;+ getUnassignedCourses()&lt;br&gt;+ getCoursesByCreditHours(hours)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="320" width="280" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="controller-teacher" value="&lt;b&gt;TeacherController&lt;/b&gt;&lt;hr/&gt;- teacherService: TeacherService&lt;hr/&gt;+ getAllTeachers()&lt;br&gt;+ addTeacher(teacher)&lt;br&gt;+ updateTeacher(id, teacher)&lt;br&gt;+ deleteTeacher(id)&lt;br&gt;+ getSingleTeacher(id)&lt;br&gt;+ getTeachersBySpecialization(spec)&lt;br&gt;+ giveSalaryRaise(id, amount)&lt;br&gt;+ getHighestPaidTeacher()&lt;br&gt;+ reassignCourses(fromId, toId)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="580" width="280" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="service-student" value="&lt;b&gt;StudentService&lt;/b&gt;&lt;hr/&gt;- students: ArrayList&amp;lt;Student&amp;gt;&lt;hr/&gt;+ getAllStudents()&lt;br&gt;+ getSingleStudent(id)&lt;br&gt;+ addStudent(student)&lt;br&gt;+ deleteStudent(id)&lt;br&gt;+ updateStudent(id, student)&lt;br&gt;+ getStudentsByMajor(major)&lt;br&gt;+ calculateAverageGpa()&lt;br&gt;+ highestGpa()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="480" y="40" width="280" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="service-course" value="&lt;b&gt;CourseService&lt;/b&gt;&lt;hr/&gt;- courses: ArrayList&amp;lt;Course&amp;gt;&lt;hr/&gt;+ getAllCourses()&lt;br&gt;+ addCourse(course)&lt;br&gt;+ deleteCourse(id)&lt;br&gt;+ updateCourse(id, course)&lt;br&gt;+ getCourseById(id)&lt;br&gt;+ getCoursesByTeacherId(teacherId)&lt;br&gt;+ assignTeacherToCourse(courseId, teacherId)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="480" y="320" width="280" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="service-teacher" value="&lt;b&gt;TeacherService&lt;/b&gt;&lt;hr/&gt;- teachers: ArrayList&amp;lt;Teacher&amp;gt;&lt;br&gt;- courseService: CourseService&lt;hr/&gt;+ getAllTeachers()&lt;br&gt;+ getSingleTeacher(id)&lt;br&gt;+ addTeacher(teacher)&lt;br&gt;+ deleteTeacher(id)&lt;br&gt;+ updateTeacher(id, teacher)&lt;br&gt;+ getTeachersBySpecialization(spec)&lt;br&gt;+ giveSalaryRaise(id, amount)&lt;br&gt;+ reassignTeacherCourses(fromId, toId)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="480" y="580" width="280" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="model-student" value="&lt;b&gt;Student&lt;/b&gt;&lt;hr/&gt;- id: String&lt;br&gt;- name: String&lt;br&gt;- major: String&lt;br&gt;- age: int&lt;br&gt;- gpa: double" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="920" y="40" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="model-course" value="&lt;b&gt;Course&lt;/b&gt;&lt;hr/&gt;- id: String&lt;br&gt;- name: String&lt;br&gt;- teacherId: String&lt;br&gt;- creditHours: int" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="920" y="320" width="200" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="model-teacher" value="&lt;b&gt;Teacher&lt;/b&gt;&lt;hr/&gt;- id: String&lt;br&gt;- name: String&lt;br&gt;- salary: Double&lt;br&gt;- specialization: String&lt;br&gt;- status: String" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="920" y="580" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="dep-cstud-sstud" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" parent="1" source="controller-student" target="service-student">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep-sstud-mstud" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" parent="1" source="service-student" target="model-student">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep-ccourse-scourse" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" parent="1" source="controller-course" target="service-course">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep-scourse-mcourse" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" parent="1" source="service-course" target="model-course">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep-cteacher-steacher" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" parent="1" source="controller-teacher" target="service-teacher">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep-steacher-mteacher" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" parent="1" source="service-teacher" target="model-teacher">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc-teacher-course" value="teaches" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=classic;startArrow=none;" edge="1" parent="1" source="model-teacher" target="model-course">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="multi-teacher" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="assoc-teacher-course">
+          <mxGeometry x="-0.15" y="-1" relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="multi-course" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="assoc-teacher-course">
+          <mxGeometry x="0.1" y="2" relative="1" as="geometry">
+            <mxPoint y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dep-steacher-scourse" value="&amp;lt;&amp;lt;uses&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" parent="1" source="service-teacher" target="service-course">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="title-controllers" value="Controllers" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="5" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="title-services" value="Services" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="5" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="title-models" value="Models" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="960" y="5" width="120" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
