@@ -41,7 +41,7 @@ public class StudentService {
     }
 
 
-    public boolean updateStudent(String id, @Valid Student student) {
+    public boolean updateStudent(String id, Student student) {
         for (Student studentLoopVar : students){
             if (studentLoopVar.getId().equals(id)){
                 students.set(students.indexOf(studentLoopVar), studentLoopVar);
